@@ -6,9 +6,9 @@ on:
 jobs:
   build-angular:
     runs-on: ubuntu-latest
+    env:
+      working-directory: ./f1-client
 
     steps:
-    - name: change to angular directory
-      run: cd f1-client
     - name: build dockerfile
       run: docker build --tag 13markdocker/f1-client:latest .
