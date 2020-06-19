@@ -4,9 +4,11 @@ on:
     branches: [ master ]
 
 jobs:
-  build:
+  build-angular:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Run a one-line script
-      run: echo Hello, world!
+    - name: change to angular directory
+      run: cd f1-client
+    - name: build dockerfile
+      run: docker build --tag 13markdocker/f1-client:latest .
